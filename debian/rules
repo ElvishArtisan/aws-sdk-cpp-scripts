@@ -1,0 +1,44 @@
+#!/usr/bin/make -f
+
+build:
+	dh_update_autotools_config
+	dh_autoreconf
+	cmake --build . --config=Debug
+	make DESTDIR=debian/tmp install
+
+binary:
+	dh_testroot
+	dh_prep
+	dh_auto_install
+	dh_installchangelogs ChangeLog
+
+#
+# aws-sdk-cpp-s3
+#
+	mkdir -p debian/aws-sdk-cpp-s3/usr/lib
+	mv debian/tmp/usr/lib/* debian/aws-sdk-cpp-s3/usr/lib/
+
+#
+# aws-sdk-cpp-s3-dev
+#
+	mkdir -p debian/aws-sdk-cpp-s3-dev/usr/include
+	mv debian/tmp/usr/include/* debian/aws-sdk-cpp-s3-dev/usr/include/
+	mkdir -p debian/aws-sdk-cpp-s3-dev/usr/lib/x86_64-linux-gnu
+	mv debian/aws-sdk-cpp-s3/usr/lib/x86_64-linux-gnu/pkgconfig debian/aws-sdk-cpp-s3-dev/usr/lib/x86_64-linux-gnu
+	mv debian/aws-sdk-cpp-s3/usr/lib/x86_64-linux-gnu/*.so debian/aws-sdk-cpp-s3-dev/usr/lib/x86_64-linux-gnu/
+
+	dh_strip_nondeterminism
+	dh_compress
+	dh_fixperms
+	dh_missing
+	dh_dwz
+	dh_strip
+	dh_makeshlibs
+	dh_shlibdeps
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+%:
+	dh $@

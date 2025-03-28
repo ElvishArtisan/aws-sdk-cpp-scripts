@@ -1,0 +1,6 @@
+This is the README file for the aws-sdk-cpp-s3 package.
+
+This software comes with ABSOLUTELY NO WARRANTY.  See the file 'COPYING' for
+details.
+
+These scripts can be used to be DEB packages for parts of Amazon's C++ API.

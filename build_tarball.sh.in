@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#
+# Build the aws-sdk-cpp-s3 C++ API
+#
+
+SOURCE_ROOT=$HOME/dev/aws-sdk-cpp
+BUILD_TYPE=Debug
+
+rm -rf aws-sdk-cpp-s3-@VERSION@
+mkdir -p aws-sdk-cpp-s3-@VERSION@
+cd aws-sdk-cpp-s3-@VERSION@
+cmake $SOURCE_ROOT \
+      -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DBUILD_ONLY="s3"
+cp -a ../debian .
+cp $SOURCE_ROOT/CHANGELOG.md ChangeLog
+cd ..
+tar -zvcf aws-sdk-cpp-s3-@VERSION@.tar.gz aws-sdk-cpp-s3-@VERSION@
+
+#cmake --build . --config=$BUILD_TYPE
+#make DESTDIR=/some/path install
+
