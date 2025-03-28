@@ -3,3 +3,6 @@
 2025-03-28 Fred Gleason <fredg@paravelsystems.com>
 	* Added code to automatically detect the API version from the
 	source tree.
+2025-03-28 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a bug in DEB packaging that incorrectly packaged arch
+	dependent files on non-x66_64 architectures.
