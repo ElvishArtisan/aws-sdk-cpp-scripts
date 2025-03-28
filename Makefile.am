@@ -45,9 +45,7 @@ EXTRA_DIST = autogen.sh\
              CODINGSTYLE\
              get_distro.pl\
              get_target.sh\
-             aws-sdk-cpp.spec.in\
-             link_common.sh\
-             PACKAGE_VERSION
+             aws-sdk-cpp.spec.in
 
 CLEANFILES = *~\
              *.buildinfo\
@@ -71,6 +69,7 @@ DISTCLEANFILES = aws-sdk-cpp.spec\
 
 MAINTAINERCLEANFILES = *~\
                        *.tar.gz\
+                       API_VERSION\
                        aclocal.m4\
                        compile\
                        config.guess\

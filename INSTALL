@@ -1,1 +1,17 @@
-This is the installation file for the aws-sdk-cpp package.
+This is the installation file for the aws-sdk-cpp-scripts package.
+
+Basic setup:
+
+1) Check out the source code for the AWS C++ API from GitHub. (See
+instructions at https://sdk.amazonaws.com/cpp/api/LATEST/root/html/index.html).
+
+  Example:
+    cd ~/dev
+    git clone --recurse-submodules https://github.com/aws/aws-sdk-cpp
+
+2) Define 'AWS_SDK_CPP_S3_SOURCE' in your environment to point to the top
+of the checked out source tree.
+
+  Example:
+    Add the following line to '~/.bashrc':
+      export AWS_SDK_CPP_S3_SOURCE=$HOME/dev/aws-sdk-cpp

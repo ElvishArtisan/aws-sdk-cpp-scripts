@@ -14,7 +14,7 @@ Description: AWS C++ API for Simple Storage Service
 
 Package: aws-sdk-cpp-s3-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, aws-sdk-cpp-s3 (=@VERSION@-1)
 Description: Development components for the AWS C++ API for S3
  These are the library components and headers required to develop applications
  for the AWS C++ Api for Simple Storage Service (S3)

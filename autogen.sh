@@ -21,11 +21,20 @@
 ##
 
 #
+# Get the API version
+#
+if test -z $AWS_SDK_CPP_S3_SOURCE ; then
+    echo "Cannot find SDK source tree (define \$AWS_SDK_CPP_S3_SOURCE)" >&2
+    exit 1
+fi
+cp $AWS_SDK_CPP_S3_SOURCE/VERSION API_VERSION
+
+#
 # Generate Debian packaging metadata
 #
 DATESTAMP=`date +%a,\ %d\ %b\ %Y\ %T\ %z`
-sed s/@VERSION@/`cat PACKAGE_VERSION`/ < debian/control.src > debian/control
-sed s/@VERSION@/`cat PACKAGE_VERSION`/ < debian/changelog.src | sed "s/@DATESTAMP@/$DATESTAMP/" > debian/changelog
+sed s/@VERSION@/`cat API_VERSION`/ < debian/control.src > debian/control
+sed s/@VERSION@/`cat API_VERSION`/ < debian/changelog.src | sed "s/@DATESTAMP@/$DATESTAMP/" > debian/changelog
 
 aclocal $ACLOCAL_FLAGS || {
     echo "aclocal \$ACLOCAL_FLAGS where \$ACLOCAL_FLAGS= failed, exiting..."

@@ -4,18 +4,21 @@
 # Build the aws-sdk-cpp-s3 C++ API
 #
 
-SOURCE_ROOT=$HOME/dev/aws-sdk-cpp
-BUILD_TYPE=Debug
+if test -z $AWS_SDK_CPP_S3_SOURCE ; then
+    echo "Cannot find SDK source tree (define \$AWS_SDK_CPP_S3_SOURCE)" >&2
+    exit 1
+fi
+BUILD_TYPE=Release
 
 rm -rf aws-sdk-cpp-s3-@VERSION@
 mkdir -p aws-sdk-cpp-s3-@VERSION@
 cd aws-sdk-cpp-s3-@VERSION@
-cmake $SOURCE_ROOT \
+cmake $AWS_SDK_CPP_S3_SOURCE \
       -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DBUILD_ONLY="s3"
 cp -a ../debian .
-cp $SOURCE_ROOT/CHANGELOG.md ChangeLog
+cp $AWS_SDK_CPP_S3_SOURCE/CHANGELOG.md ChangeLog
 cd ..
 tar -zvcf aws-sdk-cpp-s3-@VERSION@.tar.gz aws-sdk-cpp-s3-@VERSION@
 
