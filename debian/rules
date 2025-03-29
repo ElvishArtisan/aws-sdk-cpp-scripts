@@ -3,7 +3,7 @@
 build:
 	dh_update_autotools_config
 	dh_autoreconf
-	cmake --build . --config=Debug
+	cmake --build . --config=Release
 	make DESTDIR=debian/tmp install
 
 binary:

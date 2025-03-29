@@ -8,3 +8,5 @@
 	dependent files on non-x66_64 architectures.
 2025-03-29 Fred Gleason <fredg@paravelsystems.com>
 	* Added a check for cmake(1) to the 'configure' script.
+2025-03-29 Fred Gleason <fredg@paravelsystems.com>
+	* Changed the build type from 'Debug' to 'Release'.
