@@ -53,6 +53,14 @@ AR_GET_DISTRO()
 AC_SUBST(DISTRO,$ar_gcc_distro)
 
 #
+# Check for cmake(1)
+#
+AC_CHECK_PROG([CMAKE_FOUND],[cmake],[yes])
+if test -z $CMAKE_FOUND ; then
+   AC_MSG_ERROR([*** cmake not found ***])
+fi
+
+#
 # Configure RPM Build
 #
 AC_CHECK_PROG(RPMBUILD_FOUND,rpmbuild,[yes],[])
