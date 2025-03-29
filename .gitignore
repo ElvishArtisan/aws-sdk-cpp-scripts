@@ -7,6 +7,7 @@
 *.spec
 *.tar.gz
 *.tar.xz
+API_VERSION
 Makefile
 Makefile.in
 aclocal.m4

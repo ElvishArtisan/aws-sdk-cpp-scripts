@@ -1,7 +1,7 @@
 This is the installation file for the aws-sdk-cpp-scripts package.
 
-Basic setup:
-
+Basic Setup
+-----------
 1) Check out the source code for the AWS C++ API from GitHub. (See
 instructions at https://sdk.amazonaws.com/cpp/api/LATEST/root/html/index.html).
 
@@ -15,3 +15,17 @@ of the checked out source tree.
   Example:
     Add the following line to '~/.bashrc':
       export AWS_SDK_CPP_S3_SOURCE=$HOME/dev/aws-sdk-cpp
+
+3) Initialize the build system by doing:
+
+  ./autogen.sh
+  ./configure
+  make
+
+Building Packages
+-----------------
+
+Once basic setup is complete, you can generate packages as follows:
+
+DEB Packages:
+  make deb
