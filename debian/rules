@@ -25,7 +25,7 @@ binary:
 	mv debian/tmp/usr/include/* debian/aws-sdk-cpp-s3-dev/usr/include/
 	mkdir -p debian/aws-sdk-cpp-s3-dev/usr/lib/`gcc -dumpmachine`
 	mv debian/aws-sdk-cpp-s3/usr/lib/`gcc -dumpmachine`/pkgconfig debian/aws-sdk-cpp-s3-dev/usr/lib/`gcc -dumpmachine`
-	mv debian/aws-sdk-cpp-s3/usr/lib/`gcc -dumpmachine`/*.so debian/aws-sdk-cpp-s3-dev/usr/lib/`gcc -dumpmachine`/
+#	mv debian/aws-sdk-cpp-s3/usr/lib/`gcc -dumpmachine`/*.so debian/aws-sdk-cpp-s3-dev/usr/lib/`gcc -dumpmachine`/
 
 	dh_strip_nondeterminism
 	dh_compress

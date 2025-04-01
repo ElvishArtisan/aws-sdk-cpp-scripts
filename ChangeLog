@@ -13,3 +13,7 @@
 2025-03-29 Fred Gleason <fredg@paravelsystems.com>
 	* Removed 'debian/source/Makefile.in'.
 	* Updated 'INSTALL'.
+2025-04-01 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a bug that caused DLLs to be placed in the '-dev'
+	sub-package.
+	* Incremented the build version to '2'.

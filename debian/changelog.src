@@ -1,4 +1,4 @@
-aws-sdk-cpp-s3 (@VERSION@-1) unstable; urgency=medium
+aws-sdk-cpp-s3 (@VERSION@-2) unstable; urgency=medium
 
   * Production release (see ChangeLog for details)
 
